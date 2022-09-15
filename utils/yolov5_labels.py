@@ -5,7 +5,16 @@ from tqdm import tqdm
 import os
 from os import getcwd
 
-base_path = r'D:\MachineLearning\Code\Study_YOLOV5\datasets\DongYing-Product'
+import os
+import sys
+from pathlib import Path
+FILE = Path(__file__).resolve()
+ROOT = FILE.parents[0].parents[0]  # root directory
+if str(ROOT) not in sys.path:
+    sys.path.append(str(ROOT))  # add ROOT to PATH
+ROOT = Path(os.path.relpath(ROOT, Path.cwd()))  # relative
+
+base_path = ROOT / r'datasets\DongYing-Product'
 labels_path = base_path + r'\labels'
 annotations_path = base_path + r'\Annotations'
 segmentation_path = base_path + r'\Segmentation'

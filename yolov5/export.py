@@ -311,8 +311,8 @@ def export_engine(model, im, file, train, half, simplify, workspace=4, verbose=F
         LOGGER.info(f'\n{prefix} export failure: {e}')
 
 @torch.no_grad()
-def run(data=ROOT / 'data/coco128.yaml',  # 'dataset.yaml path'
-        weights=ROOT / 'yolov5s.pt',  # weights path
+def run(data=ROOT / 'data/DongYing-Product.yaml',  # 'dataset.yaml path'
+        weights=ROOT / r'runs\train\exp2\weights\best.pt',  # weights path
         imgsz=(640, 640),  # image (height, width)
         batch_size=1,  # batch size
         device='cpu',  # cuda device, i.e. 0 or 0,1,2,3 or cpu
@@ -398,8 +398,8 @@ def run(data=ROOT / 'data/coco128.yaml',  # 'dataset.yaml path'
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data', type=str, default=ROOT / 'data/coco128.yaml', help='dataset.yaml path')
-    parser.add_argument('--weights', type=str, default=ROOT / 'yolov5s.pt', help='weights path')
+    parser.add_argument('--data', type=str, default=ROOT / 'data/DongYing-Product.yaml', help='dataset.yaml path')
+    parser.add_argument('--weights', type=str, default=ROOT / r'runs\train\exp2\weights\best.pt', help='weights path')
     parser.add_argument('--imgsz', '--img', '--img-size', nargs='+', type=int, default=[640, 640], help='image (h, w)')
     parser.add_argument('--batch-size', type=int, default=1, help='batch size')
     parser.add_argument('--device', default='cpu', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
